@@ -1,4 +1,0 @@
-{
-	"ws"   : "wss://ws.cex.io/ws/",
-	"https" : "https://cex.io/api/tickers/USD" 
-}

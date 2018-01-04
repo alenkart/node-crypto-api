@@ -1,4 +1,4 @@
-const { Cexio, CoinMarketCap, Bittrex, Cryptonator, Kraken } = require('./core/lib/cexio');
+const { Cexio, CoinMarketCap, Bittrex, Cryptonator, Kraken } = require('./lib');
 
 kraken = new Kraken();
 bittrex = new Bittrex();
@@ -16,4 +16,11 @@ kraken.ticker()
 	.then(res => console.log('\n\n', res))
 	.then(() => bittrex.getticker())
 	.then(res => console.log('\n\n', res))
-	.catch(console.error);
+	.then(() => {
+
+		cexio
+		.socket()
+		.send({ "e": "subscribe", "rooms": [ "tickers" ] })
+		.init();
+
+	}).catch(console.error);
