@@ -1,5 +1,11 @@
-# cryptoMailer
-Send a email when a cryptocurrency reach a rate
+# crypto-api
+Provide an api to consume all the public methods from:
+
+	1) Cexio
+	2) CoinMarketCap
+	3) Bittrex
+	4) Cryptonator
+	5) Kraken
 
 ### Testing the Api
 ```
@@ -30,9 +36,3 @@ kraken.ticker()
 
 	}).catch(console.error);
 ```
-
-### Rate configuration
-core / configs / currencies.json
-
-### Email configuration
-core / configs / email.json
