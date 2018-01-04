@@ -1,0 +1,23 @@
+{
+  "transporter" : {
+    "service" : "Gmail",
+    "auth" : {
+        "user" : "info.crossblood@gmail.com",
+        "pass" : "infocrossblood"
+    },
+    "tls": {
+       "rejectUnauthorized": false
+    }
+    },
+    "options" : {
+      "from" : "Crypto Mailer <info.crossblood@gmail.com>",
+      "to" : [
+        "alenkart.r@gmail.com",
+        "diaz.rafael@gmail.com",
+        "edward.mata.c@gmail.com",
+        "quicktextsinc@gmail.com"
+      ],
+      "subject" : "Please set a subject",
+      "text" : "Please set a text"
+    }
+}

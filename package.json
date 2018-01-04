@@ -1,0 +1,12 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2",
+    "nodemailer": "^4.4.1",
+    "request": "^2.83.0",
+    "ws": "^3.3.3"
+  }
+}

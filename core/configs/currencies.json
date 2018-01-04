@@ -1,0 +1,37 @@
+{
+	"BTC:USD" : {
+		"name": "bitcoin",
+		"max" : 2,
+		"min" : -2
+	},
+	"ETH:USD" : {
+		"name": "ethereum",
+		"max" : 2,
+		"min" : -2 
+	},
+	"BCH:USD" : {
+		"name": "bitcoin-cash",
+		"max" : 2,
+		"min" : -2 
+	},
+	"BTG:USD" : {
+		"name": "bitcoin-gold",
+		"max" : 2,
+		"min" : -2 
+	},
+	"DASH:USD" : {
+		"name": "dash",
+		"max" : 2,
+		"min" : -2 
+	},
+	"XRP:USD" : {
+		"name": "ripple",
+		"max" : 2,
+		"min" : -2 
+	},
+	"ZEC:USD" : {
+		"name": "zcash",
+		"max" : 2,
+		"min" : -2 
+	}
+}
