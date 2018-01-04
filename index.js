@@ -1,10 +1,4 @@
-const express = require('express');
-const app = express();
-const port = 3000;
-
 const { Cexio, CoinMarketCap, Bittrex, Cryptonator, Kraken } = require('./core/lib/cexio');
-const PriceJob = require('./core/job/priceJob');
-const fixString = require('./core/lib/fixString');
 
 kraken = new Kraken();
 bittrex = new Bittrex();
