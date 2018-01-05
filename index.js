@@ -1,5 +1,6 @@
 /*
 	Alenkart Rodriguez
+	me@alenkart.com
 */
 
 'use strict';
