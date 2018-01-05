@@ -1,4 +1,7 @@
 # node-crypto-api
+
+[![NPM](https://nodei.co/npm/node-crypto-api.png)](https://nodei.co/npm/node-crypto-api/)
+
 Provide an api to consume all the public methods from:
 
 	1) Cexio
@@ -7,41 +10,86 @@ Provide an api to consume all the public methods from:
 	4) Cryptonator
 	5) Kraken
 
-### Testing the Api
+### Kraken
 ```
-const { Cexio, CoinMarketCap, Bittrex, Cryptonator, Kraken } = require('./lib');
+const { Kraken } = require('node-crypto-api');
 
-kraken = new Kraken();
-bittrex = new Bittrex();
-cexio = new Cexio();
-coinMarketCap = new CoinMarketCap();
-cryptonator = new Cryptonator();
+const kraken = new Kraken();
 
-kraken.ticker()
-	.then(console.log)
-	.then(() => cexio.ticker())
-	.then(res => console.log('\n\n', res))
-	.then(() => cryptonator.ticker())
-	.then(res => console.log('\n\n', res))
-	.then(() => coinMarketCap.ticker())
-	.then(res => console.log('\n\n', res))
-	.then(() => bittrex.getticker())
-	.then(res => console.log('\n\n', res))
-	.then(() => {
-
-		cexio.socket()
-			.send({ "e": "subscribe", "rooms": [ "tickers" ] })
-			.init();
-
-	}).catch(console.error);
-
+//ticker
+kraken.ticker('XBT', 'USD')
+    .then(console.log)
+    .catch(console.error);
 ```
 
-### CoinMarketCap table scrapper
+### Cexio
 ```
-coinMarketCap.markets('bitcoin').then(console.log).catch(console.log);
+const { Cexio } = require('node-crypto-api');
 
-coinMarketCap.historicalData('bitcoin', 20171230, 20180105).then(console.log).catch(console.log);
+const cexio = new Cexio();
 
-coinMarketCap.exchanges('bithumb').then(console.log).catch(console.log);
+//ticker
+cexio.ticker('BTC', 'USD')
+    .then(console.log)
+    .catch(console.error);
+
+//socket
+const cexioSocket = cexio.socket();
+
+cexioSocket.send({ "e": "subscribe", "rooms": [ "tickers" ] });
+
+cexioSocket.onMessage = function(res) {
+	console.log(JSON.parse(res));
+}
+
+cexioSocket.init();
+```
+
+### CoinMarketCap
+```
+const { CoinMarketCap } = require('node-crypto-api');
+
+const coinMarketCap = new CoinMarketCap();
+
+//ticker
+coinMarketCap.ticker('bitcoin')
+    .then(console.log)
+    .catch(console.error);
+
+//tables scrapping
+coinMarketCap.markets('bitcoin')
+    .then(console.log)
+    .catch(console.error);
+
+coinMarketCap.historicalData('bitcoin', 20171230, 20180105)
+    .then(console.log)
+    .catch(console.error);
+
+coinMarketCap.exchanges('bithumb')
+    .then(console.log)
+    .catch(console.error);
+```
+
+### Cryptonator
+```
+const { Cryptonator } = require('node-crypto-api');
+
+const cryptonator = new Cryptonator();
+
+//ticker
+cryptonator.ticker('btc', 'usd')
+    .then(console.log)
+    .catch(console.error);
+```
+
+### Bittrex
+```
+const { Bittrex } = require('node-crypto-api');
+
+const bittrex = new Bittrex();
+
+//ticker
+bittrex.getticker('BTC', 'LTC')
+    .then(console.log)
+    .catch(console.error);
 ```
