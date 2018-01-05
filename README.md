@@ -1,4 +1,4 @@
-# crypto-api
+# node-crypto-api
 Provide an api to consume all the public methods from:
 
 	1) Cexio
@@ -29,17 +29,19 @@ kraken.ticker()
 	.then(res => console.log('\n\n', res))
 	.then(() => {
 
-cexio
-	.socket()
-	.send({ "e": "subscribe", "rooms": [ "tickers" ] })
-	.init();
+		cexio.socket()
+			.send({ "e": "subscribe", "rooms": [ "tickers" ] })
+			.init();
 
 	}).catch(console.error);
 
+```
+
+### CoinMarketCap table scrapper
+```
 coinMarketCap.markets('bitcoin').then(console.log).catch(console.log);
 
 coinMarketCap.historicalData('bitcoin', 20171230, 20180105).then(console.log).catch(console.log);
 
 coinMarketCap.exchanges('bithumb').then(console.log).catch(console.log);
-
 ```
