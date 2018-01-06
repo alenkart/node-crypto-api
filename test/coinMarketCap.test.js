@@ -1,11 +1,6 @@
-const {
-	Market,
-	Cexio,
-	Kraken,
-	Bittrex,
-	Cryptonator,
-	CoinMarketCap,
-} = require('./../index');
+'use strict';
+
+const { CoinMarketCap } = require('./../index');
 
 describe('Testing CoinMarketCap Api', () => {
 

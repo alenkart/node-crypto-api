@@ -74,8 +74,6 @@ coinMarketCap.exchanges('bithumb')
 ##### Ticker
 ```
 coinMarketCap.ticker()
-    .then(console.log)
-    .catch(console.error);
 ```
     @ currency  : string
     @ queryString : {
