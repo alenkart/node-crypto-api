@@ -9,7 +9,8 @@
     "ws": "^3.3.3"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "dev" : "yarn --production=false"
   },
   "devDependencies": {
     "jest": "^22.0.4"
