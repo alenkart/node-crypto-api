@@ -2,7 +2,7 @@
 
 [![NPM](https://nodei.co/npm/node-crypto-api.png)](https://nodei.co/npm/node-crypto-api/)
 
-Provide an api to consume all the public methods from:
+Provide an api to consume data from multiple cryptocurrencies markets:
 
 	1) Cexio
 	2) CoinMarketCap
@@ -11,6 +11,7 @@ Provide an api to consume all the public methods from:
 	5) Kraken
 
 ### Kraken
+
 ```
 const { Kraken } = require('node-crypto-api');
 
@@ -23,6 +24,7 @@ kraken.ticker('XBT', 'USD')
 ```
 
 ### Cexio
+
 ```
 const { Cexio } = require('node-crypto-api');
 
@@ -46,6 +48,7 @@ cexioSocket.init();
 ```
 
 ### CoinMarketCap
+
 ```
 const { CoinMarketCap } = require('node-crypto-api');
 
@@ -69,12 +72,17 @@ coinMarketCap.exchanges('bithumb')
     .then(console.log)
     .catch(console.error);
 ```
+
 #### Rest Api
 
 ##### Ticker
+
 ```
 coinMarketCap.ticker()
 ```
+
+Params:
+
     @ currency  : string
     @ queryString : {
         limit : number
@@ -83,9 +91,13 @@ coinMarketCap.ticker()
     }
 
 ##### Global
+
 ```
 coinMarketCap.global()
 ```
+
+Params:
+
     @ currency  : string
     @ queryString : {
         convert : 'string' 
@@ -94,39 +106,59 @@ coinMarketCap.global()
 #### Table scrapping
 
 ##### Top 100 currencies
+
 ```
 coinMarketCap.home()
 ```
+
 ##### All currencies
+
 ```
 coinMarketCap.all()
 ```
+
 ##### Coins
+
 ```
 coinMarketCap.coins()
 ```
+
 ##### Get Total Supply
+
 ```
 coinMarketCap.totalSupply()
 ```
+
 ##### Non Mineable
+
 ```
 coinMarketCap.nonMineable()
 ```
+
 ##### Tockens
+
 ```
 coinMarketCap.tokens()
 ```
+
 ##### Markets
+
 ```
 coinMarketCap.markets()
 ```
+   
+Params:
+
     @ currency  : string
 
 ##### Historial Data
+
 ```
 coinMarketCap.historicalData()
 ```
+
+Params:
+
     @ currency  : string
     @ queryString : {
         start : number
@@ -134,12 +166,17 @@ coinMarketCap.historicalData()
     }
 
 ##### Exchanges
+
 ```
 coinMarketCap.exchanges()
 ```
+   
+Params:
+
     @ market  : string
 
 ### Cryptonator
+
 ```
 const { Cryptonator } = require('node-crypto-api');
 
@@ -151,7 +188,42 @@ cryptonator.ticker('btc', 'usd')
     .catch(console.error);
 ```
 
+#### Rest Api
+
+##### Ticker
+
+Return the the price, volume and price change
+
+```
+cryptonator.ticker()
+
+```
+
+Params:
+
+    @ base   : string
+    @ target : string
+
+##### Full
+
+Return list of prices from multiple markets 
+
+```
+cryptonator.full()
+
+```
+
+##### Currencies
+
+Return a list of the suported currencies
+
+```
+cryptonator.currencies()
+
+```
+
 ### Bittrex
+
 ```
 const { Bittrex } = require('node-crypto-api');
 
