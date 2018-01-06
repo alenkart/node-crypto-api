@@ -1,6 +1,9 @@
 {
   "name": "node-crypto-api",
   "version": "1.0.3",
+  "description": "Provide an api to consume data from multiple cryptocurrencies markets",
+  "author": "Alenkart Rodriguez <me@alenkart.com>",
+  "repository": "https://github.com/Alenkart/node-crypto-api",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
