@@ -61,7 +61,7 @@ coinMarketCap.markets('bitcoin')
     .then(console.log)
     .catch(console.error);
 
-coinMarketCap.historicalData('bitcoin', 20171230, 20180105)
+coinMarketCap.historicalData('bitcoin', { start : 20171230, end : 20180105 })
     .then(console.log)
     .catch(console.error);
 
@@ -69,6 +69,77 @@ coinMarketCap.exchanges('bithumb')
     .then(console.log)
     .catch(console.error);
 ```
+#### Rest Api
+
+##### Ticker
+```
+coinMarketCap.ticker()
+    .then(console.log)
+    .catch(console.error);
+```
+    @ currency  : string
+    @ queryString : {
+        limit : number
+        start : number
+        convert : 'string' 
+    }
+
+##### Global
+```
+coinMarketCap.global()
+```
+    @ currency  : string
+    @ queryString : {
+        convert : 'string' 
+    }
+
+#### Table scrapping
+
+##### Top 100 currencies
+```
+coinMarketCap.home()
+```
+##### All currencies
+```
+coinMarketCap.all()
+```
+##### Coins
+```
+coinMarketCap.coins()
+```
+##### Get Total Supply
+```
+coinMarketCap.totalSupply()
+```
+##### Non Mineable
+```
+coinMarketCap.nonMineable()
+```
+##### Tockens
+```
+coinMarketCap.tokens()
+```
+##### Markets
+```
+coinMarketCap.markets()
+```
+    @ currency  : string
+
+##### Historial Data
+```
+coinMarketCap.historicalData()
+```
+    @ currency  : string
+    @ queryString : {
+        start : number
+        end : number
+    }
+
+##### Exchanges
+```
+coinMarketCap.exchanges()
+```
+    @ market  : string
 
 ### Cryptonator
 ```
