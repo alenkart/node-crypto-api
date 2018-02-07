@@ -12,7 +12,7 @@ Provide an api to consume data from multiple cryptocurrencies markets:
 
 ### Kraken
 
-```
+```javascript
 const { Kraken } = require('node-crypto-api');
 
 const kraken = new Kraken();
@@ -25,7 +25,7 @@ kraken.ticker('XBT', 'USD')
 
 ### Cexio
 
-```
+```javascript
 const { Cexio } = require('node-crypto-api');
 
 const cexio = new Cexio();
@@ -49,7 +49,7 @@ cexioSocket.init();
 
 ### CoinMarketCap
 
-```
+```javascript
 const { CoinMarketCap } = require('node-crypto-api');
 
 const coinMarketCap = new CoinMarketCap();
@@ -77,7 +77,7 @@ coinMarketCap.exchanges('bithumb')
 
 ##### Ticker
 
-```
+```javascript
 coinMarketCap.ticker()
 ```
 
@@ -92,7 +92,7 @@ Params:
 
 ##### Global
 
-```
+```javascript
 coinMarketCap.global()
 ```
 
@@ -107,43 +107,43 @@ Params:
 
 ##### Top 100 currencies
 
-```
+```javascript
 coinMarketCap.home()
 ```
 
 ##### All currencies
 
-```
+```javascript
 coinMarketCap.all()
 ```
 
 ##### Coins
 
-```
+```javascript
 coinMarketCap.coins()
 ```
 
 ##### Get Total Supply
 
-```
+```javascript
 coinMarketCap.totalSupply()
 ```
 
 ##### Non Mineable
 
-```
+```javascript
 coinMarketCap.nonMineable()
 ```
 
 ##### Tockens
 
-```
+```javascript
 coinMarketCap.tokens()
 ```
 
 ##### Markets
 
-```
+```javascript
 coinMarketCap.markets()
 ```
    
@@ -153,7 +153,7 @@ Params:
 
 ##### Historial Data
 
-```
+```javascript
 coinMarketCap.historicalData()
 ```
 
@@ -167,7 +167,7 @@ Params:
 
 ##### Exchanges
 
-```
+```javascript
 coinMarketCap.exchanges()
 ```
    
@@ -177,7 +177,7 @@ Params:
 
 ### Cryptonator
 
-```
+```javascript
 const { Cryptonator } = require('node-crypto-api');
 
 const cryptonator = new Cryptonator();
@@ -194,9 +194,8 @@ cryptonator.ticker('btc', 'usd')
 
 Return the the price, volume and price change
 
-```
+```javascript
 cryptonator.ticker()
-
 ```
 
 Params:
@@ -208,7 +207,7 @@ Params:
 
 Return list of prices from multiple markets 
 
-```
+```javascript
 cryptonator.full()
 
 ```
@@ -217,14 +216,14 @@ cryptonator.full()
 
 Return a list of the suported currencies
 
-```
+```javascript
 cryptonator.currencies()
 
 ```
 
 ### Bittrex
 
-```
+```javascript
 const { Bittrex } = require('node-crypto-api');
 
 const bittrex = new Bittrex();
